@@ -1,37 +1,35 @@
 const board = document.querySelector('.board');
 const size = document.querySelector('#gridSize');
+var r = document.querySelector(':root');
+let grids;
 function creatDiv(numberOfGrid){
-    for(let i = numberOfGrid; i > 0; i--){
+    r.style.setProperty('--rowN', numberOfGrid);
+    r.style.setProperty('--colN', numberOfGrid);
+    for(let i = 1; i <= numberOfGrid*numberOfGrid; i++){
         let grid = document.createElement("div");
         grid.setAttribute("class", `grid ${i}`);
-        // grid.textContent = `This is grid ${i}`;
 
         board.appendChild(grid);
-
-
-
     }
     return;
 }
 
+
 function changeSize(){
-    
-    const widthHeightOfGrid = board.offsetWidth / this.value;
-    console.log('range value:' + this.value)
-;    console.log('board\'s width:' + board.offsetWidth);
-    console.log('single grid size:' + widthHeightOfGrid);
-    const grids = document.querySelectorAll('.grid');
+    grids = document.querySelectorAll('.grid');
     grids.forEach(grid =>{
         grid.remove();
     })
-    creatDiv(this.value * this.value);
-    grids.forEach(grid =>{
-        grid.style.width = `${widthHeightOfGrid}px`;
-        grid.style.height = `${widthHeightOfGrid}px`;
-    })
-
+    console.log(this.value);
+    creatDiv(this.value);
 
 
 }
-size.addEventListener('change', changeSize);
-creatDiv((16*16));
+
+function setColor(){
+    this.style.backgroundColor = "red";
+    console.log(this);
+}
+
+size.addEventListener('input', changeSize);
+creatDiv(16);

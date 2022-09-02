@@ -1,20 +1,29 @@
 :root{
     --rowN:5;
     --colN:5;
+    --canvaBackgroundColr: #F5F5F5;
 }
 
+body{
+    background-color:#30475E;
+}
+.container1{
+    background-color: #F05454;
+    color: white;
+}
 .board{
     background-color: blanchedalmond;
     display: grid;
     width: 480px;
     height: 480px;
-    border: rgb(111, 0, 255) solid 3px;
+    border: #121212 solid 10px;
+    box-shadow: rgb(33 22 22 / 44%) 10px 14px 7px 0px;
     grid-template-columns: repeat(var(--colN),1fr);
     grid-template-rows: repeat(var(--rowN), 1fr);
 }
 
 .grid{
-    background-color: lightblue;
+    background-color: var(--canvaBackgroundColr);
     border: red solid 0.1px;
     
 }

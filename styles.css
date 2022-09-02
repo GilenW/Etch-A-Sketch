@@ -1,0 +1,11 @@
+.container{
+    background-color: blanchedalmond;
+    display: flex;
+}
+
+.grid{
+    background-color: lightblue;
+    width: 100px;
+    height: 100px;
+    border: red solid;
+}

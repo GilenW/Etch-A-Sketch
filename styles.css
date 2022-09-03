@@ -55,16 +55,57 @@ button{
     border: none;
     padding: 20px;
 }
+button:hover{
+    background-color: #30475E;
+    transform: scale(1.2);
+    box-shadow: #121212 -3px 3px 5px 0px;
+    color: white;
+}
 
 .selected{
     background-color: #30475E;
     color: white;
+    box-shadow: #121212 -3px 3px 5px 0px;
 }
 
 .slider{
-    background-color: #F5F5F5;
+
     color: black;
     border-radius: 6px;
     border: none;
     padding: 20px;
+    text-align: center;
+}
+
+/* credit: range style https://www.youtube.com/watch?v=2V4QWTIg_r8  */
+input[type="range"]{
+    -webkit-appearance: none;
+    width: 250px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 40px;
+    height: 40px;
+    box-shadow: -350px 0 0 340px #30475E;
+    background-color: #30475E;
+}
+
+input[type="color"]{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    width: 90px;
+    height: 90px;
+    
+}
+
+input[type="color"]::-webkit-color-swatch{
+    border: none;
+    border-radius:100%;
 }

@@ -2,7 +2,7 @@ const board = document.querySelector('.board');
 const size = document.querySelector('#gridSize');
 const color = document.querySelector('#colorPicker');
 const buttons = document.querySelectorAll('button');
-
+const slider = document.querySelector('.label');
 
 var r = document.querySelector(':root');
 let isDrawing = false;
@@ -70,7 +70,13 @@ function toggleFunction(){
     }
 
 }
+
+function updateLabel(){
+    console.log(this);
+    slider.textContent = `${this.value} * ${this.value}`
+};
 size.addEventListener('input', changeSize);
+size.addEventListener('input', updateLabel );
 color.addEventListener('input', ()=> choseColor =`${color.value}` );
 buttons.forEach(button =>{
     button.addEventListener('click', toggleFunction);

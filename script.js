@@ -1,12 +1,14 @@
 const board = document.querySelector('.board');
 const size = document.querySelector('#gridSize');
 const color = document.querySelector('#colorPicker');
-const clean = document.querySelector('.clean');
 const buttons = document.querySelectorAll('button');
+
+
 var r = document.querySelector(':root');
 let isDrawing = false;
 let grids = document.querySelectorAll('.grid');
 let choseColor = color.value;
+
 document.body.onmousedown = () => (isDrawing = true)
 document.body.onmouseup = () => (isDrawing = false)
 creatDiv(16);
@@ -44,6 +46,12 @@ function draw(e){
 
 
 function toggleFunction(){
+    var current = document.getElementsByClassName("selected");
+    [...current].forEach(item =>{
+        item.classList.remove('selected');
+    })
+ 
+    this.classList.add('selected');
     switch (this.textContent){
         case 'Clean':
             grids = document.querySelectorAll('.grid');
@@ -57,6 +65,7 @@ function toggleFunction(){
         case 'Draw':
             console.log(this.textContent);
             choseColor = `${color.value}`;
+            break;
         
     }
 
